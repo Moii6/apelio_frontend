@@ -1,8 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --primary: #088395;
+  --primaryDark: #071952;
+  --accent: #f2f7a1;
+  --ligth: #35a29f;
+  --contrast: #e5e5e9;
+}
 body {
   font-family: "Open Sans", sans-serif;
   font-family: "Roboto", sans-serif;
+}
+.font-lato {
+  font-family: "Lato", sans-serif;
+}
+#loginbtn {
+  background-color: var(--primary);
+  transition: background-color 0.2s ease;
+}
+#loginbtn:hover {
+  background-color: var(--ligth);
+}
+#loginbtn:focus {
+  border-radius: 1;
+}
+
+#deletebtn {
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  transition: background-color 0.2s ease;
+}
+#deletebtn:hover {
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+#deletebtn:focus {
+  border-radius: 1;
+}
+
+#outlinebtn {
+  color: var(--primary);
+  border-width: 2px;
+  border-color: var(--primary);
+}
+#outlinebtn:hover {
+  border-color: var(--ligth);
+  color: var(--ligth);
+}
+
+.rotate-45 {
+  transform: rotate(-45deg);
+}
+#tag {
+  color: black;
+}
+#tag:hover {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  border: 3px solid;
+  border-color: var(--primary) var(--ligth) var(--primary) var(--ligth);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: var(--primary) var(--ligth) var(--primary) var(--ligth);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #fff #fff transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.hidden {
+  display: none;
 }
